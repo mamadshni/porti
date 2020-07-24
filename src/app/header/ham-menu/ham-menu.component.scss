@@ -1,0 +1,87 @@
+@import '_variables.scss';
+
+:host {
+  @include section(85%);
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10;
+  padding: 0;
+
+  background: rgba($m-05, 0.7);
+  cursor: url('../../../assets/images/icon/close-line.svg') 10 10, auto;
+  transition: all 0.4s ease;
+
+  @include xl {
+    max-width: 83%;
+  }
+
+  @include lg {
+    max-width: 80%;
+  }
+  @include md {
+    max-width: unset;
+  }
+}
+
+.ham-menu-container {
+  width: 50%;
+  max-width: 350px;
+  height: 100%;
+  background: $m-01;
+  color: $f-01;
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: initial;
+
+  @include spaceMaker;
+
+  @include md {
+    width: 100%;
+    max-width: unset;
+    justify-content: center;
+  }
+
+  .menu-item-holder {
+    display: flex;
+    flex-direction: column;
+
+    .menu-item {
+      font-family: 'Quarto Bold';
+      @include font-size(35);
+      position: relative;
+      padding: 5px 10px;
+      letter-spacing: 0.2rem;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        width: 110%;
+        height: 100%;
+        right: -2%;
+        top: 0;
+        position: absolute;
+        background: $m-01;
+        opacity: 0.7;
+        pointer-events: none;
+        transition: 0.3s ease;
+      }
+
+      &:hover {
+        &::after {
+          width: 0;
+        }
+      }
+
+      &.active {
+        &::after {
+          width: 0;
+        }
+      }
+    }
+  }
+}

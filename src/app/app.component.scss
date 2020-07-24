@@ -1,0 +1,28 @@
+@import '_variables.scss';
+
+:host {
+  width: 100%;
+  min-height: 100vh;
+  background: $m-01;
+  display: block;
+}
+
+.content-holder {
+  @include section(85%);
+  min-height: 100vh;
+  box-shadow: 0 0 3px 0 rgba($m-04, 0.35);
+  padding: 0;
+
+  @include xl {
+    max-width: 83%;
+  }
+
+  @include lg {
+    box-shadow: 0 0 4px 0 rgba($m-04, 0.35);
+    max-width: 80%;
+  }
+  @include md {
+    max-width: unset;
+    box-shadow: unset;
+  }
+}

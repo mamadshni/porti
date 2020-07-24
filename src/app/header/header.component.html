@@ -1,0 +1,20 @@
+<header class="header-wrapper">
+
+    <div class="header-holder">
+
+        <div class="header-logo" [routerLink]="'/home'"></div>
+
+        <div class="header-space"></div>
+
+
+        <div class="hamburger-btn" [ngClass]="{'is-active':isMenuOppend}" (click)="openMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+</header>
+
+<app-ham-menu *ngIf="isMenuOppend" @hamMenuAnimation (closeMenu)="closeMenu()"></app-ham-menu>

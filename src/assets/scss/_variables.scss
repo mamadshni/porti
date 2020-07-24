@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap");
+
+$font-01: "Roboto", sans-serif;
+
+$m-01: #1b262c;
+$m-02: #0f4c75;
+$m-03: #3282b8;
+$m-04: #6b98b8;
+$m-05: #bbe1fa;
+
+$m-w: #efefef;
+$m-b: #101010;
+
+$f-01: #bbe1fa;
+$f-02: #6b98b8;
+$f-w: #efefef;
+$f-b: #101010;
+
+@mixin xl {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (max-width: 1240px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (max-width: 799px) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media screen and (max-width: 639px) {
+    @content;
+  }
+}
+
+@mixin xxs {
+  @media screen and (max-width: 380px) {
+    @content;
+  }
+}
+
+@mixin font-size($font-size, $base: 16, $line-height: normal, $letter-spacing: normal) {
+  font-size: $font-size * 1px;
+  font-size: ($font-size / $base) * 1rem;
+
+  @if $line-height==normal {
+    line-height: normal;
+  } @else {
+    line-height: $line-height / $font-size;
+  }
+
+  @if $letter-spacing==normal {
+    letter-spacing: normal;
+  } @else {
+    letter-spacing: #{$letter-spacing / $font-size}em;
+  }
+}
+
+@mixin pseudo(
+  $width: 100%,
+  $height: 100%,
+  $display: inline-block,
+  $pos: absolute,
+	$top:0,
+	$left:0,
+  $content: ""
+) {
+  content: $content;
+  display: $display;
+  position: $pos;
+  width: $width;
+  height: $height;
+  left: $left;
+  top: $top;
+}
+
+@mixin centerize() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include prefix(transform, translate(-50%,-50%));
+}
+
+@mixin prefix($prop, $value) {
+  -webkit-#{$prop}: #{$value};
+  -moz-#{$prop}: #{$value};
+  -ms-#{$prop}: #{$value};
+  -o-#{$prop}: #{$value};
+  #{$prop}: #{$value};
+}
+
+@mixin section($max-width:1200px) {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+@mixin spaceMaker() {
+  padding: 150px 50px;
+
+  @include xl {
+    padding: 130px 40px;
+  }
+
+  @include lg {
+    padding: 110px 30px;
+  }
+  @include md {
+    padding: 80px 30px;
+  }
+
+  @include sm {
+    padding: 70px 20px;
+  }
+}
+
+//========================= font icon =======================
+
+@font-face {
+  $addr: font/icon/la-brands-400;
+
+  font-family: 'Line Awesome Brands';
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+
+  src: url('#{$addr}.eot');
+  src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
+    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
+    url("#{$addr}.ttf") format("truetype"),
+    url("#{$addr}.svg#lineawesome") format("svg");
+}
+
+@mixin icon-b($content:'') {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: 'Line Awesome Brands';
+  font-weight: normal;
+
+  &::before {
+    content: $content;
+  }
+}
+
+@font-face {
+  $addr: font/icon/la-regular-400;
+
+  font-family: 'Line Awesome Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+
+  src: url('#{$addr}.eot');
+  src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
+    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
+    url("#{$addr}.ttf") format("truetype"),
+    url("#{$addr}.svg#lineawesome") format("svg");
+}
+
+@mixin icon-f4($content:'') {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: 'Line Awesome Free';
+  font-weight: 400;
+
+  &::before {
+    content: $content;
+  }
+}
+
+@font-face {
+  $addr: font/icon/la-solid-900;
+
+  font-family: 'Line Awesome Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+
+  src: url('#{$addr}.eot');
+  src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
+    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
+    url("#{$addr}.ttf") format("truetype"),
+    url("#{$addr}.svg#lineawesome") format("svg");
+}
+
+@mixin icon-f9($content:'') {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
+
+  &::before {
+    content: $content;
+  }
+}
+
+//=================================== other fonts =========================================
+
+@font-face {
+  $addr: font/Quarto/QuartoBold;
+
+  font-family: 'Quarto Bold';
+  font-style: normal;
+  font-weight: 300;
+  src: url("#{$addr}.ttf") format("truetype");
+}

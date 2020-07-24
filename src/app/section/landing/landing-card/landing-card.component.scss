@@ -1,0 +1,143 @@
+@import '_variables.scss';
+
+:host {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.card-holder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+  }
+
+  .card-text-holder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 110px 90px;
+    display: flex;
+    flex-direction: column;
+
+    @include xl {
+      padding: 110px 70px;
+    }
+
+    @include lg {
+      padding: 110px 50px;
+    }
+
+    @include md {
+      padding: 110px 30px;
+    }
+
+    .card-type {
+      overflow: hidden;
+      p {
+        position: relative;
+        display: inline-block;
+        color: $f-02;
+        padding-bottom: 15px;
+        transition: color 0.2s ease;
+        @include font-size(15);
+
+        &:hover {
+          color: lighten($f-02, 15%);
+
+          &::after {
+            width: 110%;
+          }
+        }
+        &::after {
+          content: '';
+          height: 2px;
+          width: 30%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: $m-02;
+          transition: 0.2s ease;
+        }
+      }
+    }
+
+    .card-title {
+      color: $f-01;
+      margin-bottom: 50px;
+      @include font-size(55);
+      font-family: 'Quarto Bold';
+      overflow: hidden;
+      height: 70px;
+
+      @include md {
+        @include font-size(45);
+        height: 58px;
+      }
+      @include sm {
+        @include font-size(35);
+        height: 45px;
+      }
+      @include xs {
+        @include font-size(26);
+        height: 32px;
+      }
+
+      &:hover {
+        .title-text {
+          margin-top: -70px;
+
+          @include md {
+            margin-top: -58px;
+          }
+
+          @include sm {
+            margin-top: -45px;
+          }
+          @include xs {
+            margin-top: -32px;
+          }
+        }
+      }
+
+      .title-text {
+        font-family: inherit;
+        transition: 0.3s ease;
+      }
+
+      .view-more {
+        font-family: inherit;
+        cursor: pointer;
+      }
+    }
+
+    .card-summery {
+      width: 50%;
+      max-height: 30%;
+      overflow: hidden;
+      color: $f-02;
+      @include font-size(16);
+
+      @include md {
+        width: 80%;
+        max-height: 50%;
+      }
+    }
+
+    .flex-space {
+      flex: 1;
+    }
+  }
+}

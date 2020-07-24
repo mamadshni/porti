@@ -1,0 +1,75 @@
+@import '_variables.scss';
+
+.footer-wrapper {
+  width: 100%;
+  position: relative;
+
+  .footer-holder {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: fixed;
+    z-index: 15;
+    bottom: 0;
+    left: 0;
+    padding: 50px 50px;
+    align-items: center;
+
+    @include xl {
+      padding: 40px 40px;
+    }
+
+    @include lg {
+      padding: 30px 30px;
+    }
+
+    @include md {
+      padding: 15px 30px;
+      background: $m-02;
+      box-shadow: 0 -1px 5px 1px rgba($m-01, 0.8);
+    }
+
+    @include sm {
+      padding: 10px 20px;
+    }
+
+    .footer-counter {
+      padding: 3px 0;
+      width: 47px;
+      display: flex;
+      justify-content: center;
+
+      @include sm {
+        width: 36px;
+      }
+      .counter-number {
+        color: $f-01;
+        @include font-size(20);
+      }
+    }
+
+    .footer-space {
+      flex: 1;
+    }
+
+    .footer-links {
+      position: relative;
+      @include prefix(transition,all 0.2s ease-in-out);
+      width: 45px;
+      color: $f-01;
+      text-align: center;
+      @include icon-f9('\f1e0');
+      @include font-size(45);
+
+      @include sm {
+        width: 35px;
+        @include font-size(35);
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: $f-02;
+      }
+    }
+  }
+}

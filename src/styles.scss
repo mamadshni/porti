@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+@import '_variables.scss';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+button,
+a,
+i {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: inherit;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-01;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $m-01;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $m-05;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $m-04;
+}
