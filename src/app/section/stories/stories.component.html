@@ -1,0 +1,15 @@
+<div class="stories-holder">
+
+  <cdk-virtual-scroll-viewport class="virtual-stories" itemSize="220" (scrolledIndexChange)="handler($event)">
+
+    <div class="story-card-holder" *cdkVirtualFor="let story of storiesList">
+
+      <div class="story-card">
+        {{story.id}}
+      </div>
+
+    </div>
+
+  </cdk-virtual-scroll-viewport>
+
+</div>

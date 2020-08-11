@@ -1,9 +1,7 @@
 import { landingCardAnimation } from '../../animations/landing-card.animation';
-import { LandingCardInterface } from './../../share/landing-card.interface';
-import { LandingService } from './../../share/landing.service';
+import { LandingCardInterface } from './../../share/landing/landing-card.interface';
+import { LandingService } from './../../share/landing/landing.service';
 import { Component, OnInit, HostListener } from '@angular/core';
-
-import { debounce_or_throttle } from '../../decorators/debounce-throttle.decorator';
 
 @Component({
   selector: 'app-landing',

@@ -1,4 +1,4 @@
-import { LandingCardInterface } from './../../../share/landing-card.interface';
+import { LandingCardInterface } from './../../../share/landing/landing-card.interface';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

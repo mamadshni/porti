@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { LandingCardComponent } from './section/landing/landing-card/landing-car
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HamMenuComponent } from './header/ham-menu/ham-menu.component';
 import { AboutComponent } from './section/about/about.component';
+import { StoriesComponent } from './section/stories/stories.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,15 @@ import { AboutComponent } from './section/about/about.component';
     LandingComponent,
     LandingCardComponent,
     HamMenuComponent,
-    AboutComponent
+    AboutComponent,
+    StoriesComponent
   ],
-  imports: [ BrowserModule, AppRoutingModule, BrowserAnimationsModule ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ScrollingModule
+  ],
   providers: [],
   bootstrap: [ AppComponent ]
 })

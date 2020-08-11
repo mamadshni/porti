@@ -109,6 +109,25 @@ $f-b: #101010;
   padding: 20px 0;
 }
 
+@mixin spaceMaker() {
+  padding: 150px 50px;
+
+  @include xl {
+    padding: 130px 40px;
+  }
+
+  @include lg {
+    padding: 110px 30px;
+  }
+  @include md {
+    padding: 80px 30px;
+  }
+
+  @include sm {
+    padding: 70px 20px;
+  }
+}
+
 //========================= font icon =======================
 
 @font-face {

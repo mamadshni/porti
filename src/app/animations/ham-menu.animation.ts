@@ -4,13 +4,12 @@ import {
   transition,
   animate,
   query,
-  group,
   stagger
 } from '@angular/animations';
 
-const cubic = 'cubic-bezier(0.65, 0.05, 0.36, 1)';
-const duration = 300;
-const delay = 200;
+const cubic = 'ease-in-out';
+const duration = 250;
+const delay = 20;
 
 export const hamMenuAnimation = trigger('hamMenuAnimation', [
   transition(':enter', [
@@ -39,7 +38,7 @@ export const hamMenuAnimation = trigger('hamMenuAnimation', [
 
     query(
       '[hamMenuItem]',
-      stagger('100ms', animate(`150ms ease-in`, style('*')))
+      stagger('80ms', animate(`100ms ${cubic}`, style('*')))
     )
   ]),
 
@@ -49,7 +48,7 @@ export const hamMenuAnimation = trigger('hamMenuAnimation', [
       stagger(
         '70ms',
         animate(
-          `120ms ease-out`,
+          `100ms ${cubic}`,
           style({
             transform: 'translateX(100%)',
             opacity: 0

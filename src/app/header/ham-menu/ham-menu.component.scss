@@ -21,6 +21,7 @@
   @include lg {
     max-width: 80%;
   }
+
   @include md {
     max-width: unset;
   }
@@ -33,7 +34,9 @@
   background: $m-01;
   color: $f-01;
   margin-left: auto;
-  position: relative;
+  right: 0;
+  top: 0;
+  position: fixed;
   display: flex;
   align-items: center;
   cursor: initial;

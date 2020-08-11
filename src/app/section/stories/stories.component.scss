@@ -1,0 +1,88 @@
+@import '_variables.scss';
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.stories-holder {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  @include spaceMaker(false);
+
+  @include md {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  @include sm {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .virtual-stories {
+    height: 100%;
+
+    & > div {
+      background: red;
+    }
+
+    .story-card-holder {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 20px;
+
+      @include md {
+        padding: 0 30px;
+      }
+
+      @include sm {
+        padding: 0 20px;
+      }
+    }
+
+    .story-card {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $m-03;
+
+      -webkit-animation-name: fadeInUp;
+      animation-name: fadeInUp;
+      animation-delay: 200ms;
+      -webkit-animation-duration: 0.4s;
+      animation-duration: 0.4s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}

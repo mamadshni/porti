@@ -1,9 +1,9 @@
 <app-header></app-header>
 
-<section class="content-holder">
+<section class="content-holder" [@routerAnimation]="prepareRoute(outlet)">
 
-    <router-outlet #outlet="outlet"></router-outlet>
-    
+  <router-outlet #outlet="outlet"></router-outlet>
+
 </section>
 
 <app-footer></app-footer>
