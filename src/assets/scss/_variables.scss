@@ -272,3 +272,8 @@ $f-b: #101010;
   font-weight: 300;
   src: url("#{$addr}.ttf") format("truetype");
 }
+
+
+div.cdk-virtual-scroll-content-wrapper {
+  @include spaceMaker(false);
+}

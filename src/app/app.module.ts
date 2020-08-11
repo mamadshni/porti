@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HamMenuComponent } from './header/ham-menu/ham-menu.component';
 import { AboutComponent } from './section/about/about.component';
 import { StoriesComponent } from './section/stories/stories.component';
+import { StoryCardComponent } from './section/stories/story-card/story-card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StoriesComponent } from './section/stories/stories.component';
     LandingCardComponent,
     HamMenuComponent,
     AboutComponent,
-    StoriesComponent
+    StoriesComponent,
+    StoryCardComponent
   ],
   imports: [
     BrowserModule,

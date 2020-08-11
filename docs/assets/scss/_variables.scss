@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap");
 
-$font-01: "Roboto", sans-serif;
+$font-01: "Roboto",
+sans-serif;
 
 $m-01: #1b262c;
 $m-02: #0f4c75;
@@ -58,25 +59,29 @@ $f-b: #101010;
 
   @if $line-height==normal {
     line-height: normal;
-  } @else {
+  }
+
+  @else {
     line-height: $line-height / $font-size;
   }
 
   @if $letter-spacing==normal {
     letter-spacing: normal;
-  } @else {
+  }
+
+  @else {
     letter-spacing: #{$letter-spacing / $font-size}em;
   }
 }
 
-@mixin pseudo(
-  $width: 100%,
+@mixin pseudo($width: 100%,
   $height: 100%,
   $display: inline-block,
   $pos: absolute,
-	$top:0,
-	$left:0,
+  $top:0,
+  $left:0,
   $content: ""
+
 ) {
   content: $content;
   display: $display;
@@ -91,7 +96,7 @@ $f-b: #101010;
   position: absolute;
   top: 50%;
   left: 50%;
-  @include prefix(transform, translate(-50%,-50%));
+  @include prefix(transform, translate(-50%, -50%));
 }
 
 @mixin prefix($prop, $value) {
@@ -109,23 +114,54 @@ $f-b: #101010;
   padding: 20px 0;
 }
 
-@mixin spaceMaker() {
-  padding: 150px 50px;
+@mixin spaceMaker($hasSide : true) {
+  @if $hasSide {
+    padding: 150px 50px;
 
-  @include xl {
-    padding: 130px 40px;
+    @include xl {
+      padding: 130px 40px;
+    }
+
+    @include lg {
+      padding: 110px 30px;
+    }
+
+    @include md {
+      padding: 85px 30px 90px;
+    }
+
+    @include sm {
+      padding: 70px 20px 75px;
+    }
   }
 
-  @include lg {
-    padding: 110px 30px;
-  }
-  @include md {
-    padding: 80px 30px;
+  @else {
+    padding: 150px 0px;
+
+    @include xl {
+      padding: 130px 0px;
+    }
+
+    @include lg {
+      padding: 0px 0px;
+    }
+
+    @include md {
+      padding: 85px 30px 90px;
+    }
+
+    @include sm {
+      padding: 70px 20px 75px;
+    }
   }
 
-  @include sm {
-    padding: 70px 20px;
-  }
+}
+
+
+//========================= functions =======================
+@function randomColor() {
+
+  @return rgb(random(255), random(255), random(255));
 }
 
 //========================= font icon =======================
@@ -140,9 +176,10 @@ $f-b: #101010;
 
   src: url('#{$addr}.eot');
   src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
-    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
-    url("#{$addr}.ttf") format("truetype"),
-    url("#{$addr}.svg#lineawesome") format("svg");
+  url("#{$addr}.woff2") format("woff2"),
+  url("#{$addr}.woff") format("woff"),
+  url("#{$addr}.ttf") format("truetype"),
+  url("#{$addr}.svg#lineawesome") format("svg");
 }
 
 @mixin icon-b($content:'') {
@@ -171,9 +208,10 @@ $f-b: #101010;
 
   src: url('#{$addr}.eot');
   src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
-    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
-    url("#{$addr}.ttf") format("truetype"),
-    url("#{$addr}.svg#lineawesome") format("svg");
+  url("#{$addr}.woff2") format("woff2"),
+  url("#{$addr}.woff") format("woff"),
+  url("#{$addr}.ttf") format("truetype"),
+  url("#{$addr}.svg#lineawesome") format("svg");
 }
 
 @mixin icon-f4($content:'') {
@@ -202,9 +240,10 @@ $f-b: #101010;
 
   src: url('#{$addr}.eot');
   src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
-    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
-    url("#{$addr}.ttf") format("truetype"),
-    url("#{$addr}.svg#lineawesome") format("svg");
+  url("#{$addr}.woff2") format("woff2"),
+  url("#{$addr}.woff") format("woff"),
+  url("#{$addr}.ttf") format("truetype"),
+  url("#{$addr}.svg#lineawesome") format("svg");
 }
 
 @mixin icon-f9($content:'') {

@@ -14,6 +14,7 @@
     left: 0;
     padding: 50px 50px;
     align-items: center;
+    pointer-events: none;
 
     @include xl {
       padding: 40px 40px;
@@ -33,6 +34,10 @@
       padding: 10px 20px;
     }
 
+    &>* {
+      pointer-events: auto;
+    }
+
     .footer-counter {
       padding: 3px 0;
       width: 47px;
@@ -42,6 +47,7 @@
       @include sm {
         width: 36px;
       }
+
       .counter-number {
         color: $f-01;
         @include font-size(20);
@@ -54,7 +60,7 @@
 
     .footer-links {
       position: relative;
-      @include prefix(transition,all 0.2s ease-in-out);
+      @include prefix(transition, all 0.2s ease-in-out);
       width: 45px;
       color: $f-01;
       text-align: center;

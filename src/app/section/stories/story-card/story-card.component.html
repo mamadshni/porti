@@ -1,0 +1,55 @@
+<div class="story-card-image">
+  <img [src]="storyCardData.imageUrl" [alt]="storyCardData.title">
+</div>
+
+<div class="story-card-detail-wrapper">
+
+  <div class="story-card-detail">
+
+    <div class="story-summery">
+
+      <h1 class="story-summery-title">
+        {{storyCardData.title}}
+      </h1>
+
+      <p class="story-summery-text">
+        {{storyCardData.summery}}
+      </p>
+
+      <div class="story-summery-more">
+        Read More
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="story-card-detail">
+
+    <div class="story-information">
+
+      <h2 class="story-info-title">
+        category :
+      </h2>
+
+      <div class="story-info-categories">
+        <p class="story-info-category" *ngFor="let category of storyCardData.categories"> {{category}} </p>
+      </div>
+
+    </div>
+
+    <div class="story-information">
+
+      <h2 class="story-info-title">
+        Date :
+      </h2>
+
+      <p class="story-info-date">
+        {{storyCardData.date | date: "mediumDate"}}
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
