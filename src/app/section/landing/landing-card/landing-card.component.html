@@ -1,29 +1,29 @@
 <div class="card-holder">
 
-    <img class="card-image" [src]="cardDetail.imageUrl" [alt]="'good'">
+  <img class="card-image" [src]="cardDetail.imageUrl" [alt]="'good'" (load)="imageLoaded()">
 
-    <div class="card-text-holder">
+  <div class="card-text-holder">
 
-        <div class="card-type">
-            <p cardType>
-                {{cardDetail.type}}
-            </p>
-        </div>
-        
-        
-        <div class="flex-space"></div>
-
-        <div class="card-title">
-            <p class="title-text" cardTitle>{{cardDetail.title}}</p>
-            <span class="view-more"> View More </span>
-        </div>
-        
-        <p class="card-summery" cardSummery>
-            {{cardDetail.summery}}
-        </p>
-
-        <div class="flex-space"></div>
-
+    <div class="card-type">
+      <p cardType>
+        {{cardDetail.type}}
+      </p>
     </div>
+
+
+    <div class="flex-space"></div>
+
+    <div class="card-title">
+      <p class="title-text" cardTitle>{{cardDetail.title}}</p>
+      <span class="view-more"> View More </span>
+    </div>
+
+    <p class="card-summery" cardSummery>
+      {{cardDetail.summery}}
+    </p>
+
+    <div class="flex-space"></div>
+
+  </div>
 
 </div>

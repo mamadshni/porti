@@ -1,0 +1,140 @@
+@import '_panel.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+}
+
+.header-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--widthMenu);
+  position: relative;
+
+  &:hover {
+
+    .header-item-icon {
+      color: $f-01;
+    }
+
+    .header-item-title {
+      transform: scale(1) translateX(var(--widthMenu));
+      transition: transform 0ms ease-in;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &.logo-holder {
+    background: $m-03;
+    box-shadow: 4px 0 10px -3px $m-05;
+
+    &:hover {
+      background: $m-04;
+
+      .logo {
+        --logo-border: #{$m-03} 3px solid;
+      }
+    }
+
+
+    .logo {
+      --logo-border: #{$m-04} 3px solid;
+
+      $size: 10px;
+      cursor: pointer;
+      height: $size;
+      width: $size;
+      position: relative;
+      box-sizing: content-box;
+      transition: 0.3s ease;
+
+      border: var(--logo-border);
+      border-radius: 50%;
+      margin: $size + 1;
+
+      @include sm {
+        $size: 10px;
+        border-width: 2px;
+        height: $size;
+        width: $size;
+        margin: $size + 1;
+      }
+
+      &::before {
+        @include pseudo(200%, 200%);
+        border: var(--logo-border);
+        border-width: inherit;
+        border-radius: 50%;
+        @include centerize();
+      }
+
+      &::after {
+        @include pseudo(300%, 300%);
+        border: var(--logo-border);
+        border-width: inherit;
+        border-radius: 50%;
+        @include centerize();
+      }
+
+    }
+  }
+
+
+
+  .header-item-icon {
+    @include icon-f9;
+    @include font-size(45);
+    color: $f-03;
+    transition: 0.3s ease;
+
+    @include lg {
+      @include font-size(40);
+    }
+
+    @include md {
+      @include font-size(35);
+    }
+
+    @include sm {
+      @include font-size(30);
+    }
+  }
+
+  .header-item-title {
+    position: fixed;
+    margin: .25em .1em;
+    padding: .2em .5em .3em;
+    font-weight: 400;
+    font-family: $font-01;
+
+    @include font-size(18);
+
+    transform: scale(0) translateX(0);
+    transition: transform .3s ease-out;
+    opacity: .8;
+    left: 10px;
+    background: $m-04;
+    color: $f-02;
+    display: inline-block;
+    border-radius: 2px;
+
+    @include lg {
+      @include font-size(17);
+    }
+
+    @include md {
+      @include font-size(16);
+    }
+
+    @include sm {
+      @include font-size(15);
+    }
+  }
+}

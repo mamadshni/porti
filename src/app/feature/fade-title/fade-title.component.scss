@@ -1,0 +1,19 @@
+@import '_variables.scss';
+
+:host {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 100px 0;
+}
+
+.fade-title-holder {
+  width: 100%;
+
+  .test {
+    width: 100%;
+    // background: red;
+    padding: 20px;
+    color: $f-01;
+  }
+}

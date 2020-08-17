@@ -1,16 +1,14 @@
-
 <section class="landing-section">
 
-    <div class="landing-cards-holder" 
-        [@cardAnimation]='correntCardIndex' 
-        (@cardAnimation.start)="startCardAnimation()"
-        (@cardAnimation.done)= "endCardAnimation()">
+  <div class="landing-cards-holder" [@cardAnimation]='correntCardIndex' (@cardAnimation.start)="startCardAnimation()"
+    (@cardAnimation.done)="endCardAnimation()">
 
-        <div class="landing-card-for" *ngFor="let card of landingCards; let i = index">
+    <div class="landing-card-for" *ngFor="let card of landingCards; let i = index">
 
-            <app-landing-card [cardDetail]="card" *ngIf="i === correntCardIndex"></app-landing-card>
+      <app-landing-card [cardDetail]="card" *ngIf="i === correntCardIndex" (imageIsLoaded)="loadNextImage()">
+      </app-landing-card>
 
-        </div>
     </div>
+  </div>
 
 </section>

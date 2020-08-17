@@ -14,7 +14,7 @@ import {
 })
 export class StoriesComponent implements OnInit {
   currentWindowState = 'big';
-  cardHeight = 1180;
+  cardHeight = 1130;
   storiesList: StoryCardInterface[] = [];
 
   @HostListener('window:resize', [ '$event' ])
@@ -24,21 +24,21 @@ export class StoriesComponent implements OnInit {
         return;
       } else {
         this.currentWindowState = 'big';
-        this.cardHeight = 1180;
+        this.cardHeight = 1100;
       }
     } else if (window.innerWidth >= 800) {
       if (this.currentWindowState === 'med') {
         return;
       } else {
         this.currentWindowState = 'med';
-        this.cardHeight = 980;
+        this.cardHeight = 850;
       }
     } else {
       if (this.currentWindowState === 'sml') {
         return;
       } else {
         this.currentWindowState = 'sml';
-        this.cardHeight = 780;
+        this.cardHeight = 650;
       }
     }
   }
@@ -47,6 +47,7 @@ export class StoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.storiesList = this.storyService.getStories();
+    this.onResize();
   }
 
   // tslint:disable-next-line:typedef

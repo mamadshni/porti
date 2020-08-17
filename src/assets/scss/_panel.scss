@@ -1,18 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap");
 
-$font-01: "Roboto", sans-serif;
+$font-01: "Roboto",
+sans-serif;
 
-$m-01: #1b262c;
-$m-02: #0f4c75;
-$m-03: #3282b8;
-$m-04: #6b98b8;
-$m-05: #bbe1fa;
+$m-01: #201d1d;
+$m-02: #2f303a;
+$m-03: #3a4c5a;
+$m-04: #9a9ce7;
+$m-05: #0f0f11;
 
 $m-w: #efefef;
 $m-b: #101010;
 
-$f-01: #bbe1fa;
-$f-02: #6b98b8;
+$f-01: #9a9ce7;
+$f-02: #201d1d;
+$f-03: #3a4c5a;
+
+
 $f-w: #efefef;
 $f-b: #101010;
 
@@ -58,13 +62,17 @@ $f-b: #101010;
 
   @if $line-height==normal {
     line-height: normal;
-  } @else {
+  }
+
+  @else {
     line-height: $line-height / $font-size;
   }
 
   @if $letter-spacing==normal {
     letter-spacing: normal;
-  } @else {
+  }
+
+  @else {
     letter-spacing: #{$letter-spacing / $font-size}em;
   }
 }
@@ -109,74 +117,6 @@ $f-b: #101010;
   padding: 20px 0;
 }
 
-@mixin spaceMaker($hasSide : true) {
-  @if $hasSide {
-    @include spaceSide;
-    @include spaceAbove;
-  } @else {
-    @include spaceAbove;
-
-    @include md {
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-
-    @include sm {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
-}
-
-@mixin spaceSide() {
-  padding-left: 50px;
-  padding-right: 50px;
-
-  @include xl {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  @include lg {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  @include md {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  @include sm {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@mixin spaceAbove() {
-  padding-top: 150px;
-  padding-bottom: 150px;
-
-  @include xl {
-    padding-top: 130px;
-    padding-bottom: 130px;
-  }
-
-  @include lg {
-    padding-top: 110px;
-    padding-bottom: 110px;
-  }
-
-  @include md {
-    padding-top: 85px;
-    padding-bottom: 90px;
-  }
-
-  @include sm {
-    padding-top: 70px;
-    padding-bottom: 20px;
-  }
-}
 
 //========================= functions =======================
 @function randomColor() {
@@ -195,12 +135,13 @@ $f-b: #101010;
 
   src: url('#{$addr}.eot');
   src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
-    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
-    url("#{$addr}.ttf") format("truetype"),
-    url("#{$addr}.svg#lineawesome") format("svg");
+  url("#{$addr}.woff2") format("woff2"),
+  url("#{$addr}.woff") format("woff"),
+  url("#{$addr}.ttf") format("truetype"),
+  url("#{$addr}.svg#lineawesome") format("svg");
 }
 
-@mixin icon-b($content:'') {
+@mixin icon-b($content : unset) {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -226,12 +167,13 @@ $f-b: #101010;
 
   src: url('#{$addr}.eot');
   src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
-    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
-    url("#{$addr}.ttf") format("truetype"),
-    url("#{$addr}.svg#lineawesome") format("svg");
+  url("#{$addr}.woff2") format("woff2"),
+  url("#{$addr}.woff") format("woff"),
+  url("#{$addr}.ttf") format("truetype"),
+  url("#{$addr}.svg#lineawesome") format("svg");
 }
 
-@mixin icon-f4($content:'') {
+@mixin icon-f4($content : unset) {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -257,12 +199,13 @@ $f-b: #101010;
 
   src: url('#{$addr}.eot');
   src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
-    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
-    url("#{$addr}.ttf") format("truetype"),
-    url("#{$addr}.svg#lineawesome") format("svg");
+  url("#{$addr}.woff2") format("woff2"),
+  url("#{$addr}.woff") format("woff"),
+  url("#{$addr}.ttf") format("truetype"),
+  url("#{$addr}.svg#lineawesome") format("svg");
 }
 
-@mixin icon-f9($content:'') {
+@mixin icon-f9($content : unset) {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -287,8 +230,4 @@ $f-b: #101010;
   font-style: normal;
   font-weight: 300;
   src: url("#{$addr}.ttf") format("truetype");
-}
-
-div.cdk-virtual-scroll-content-wrapper {
-  @include spaceMaker(false);
 }

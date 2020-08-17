@@ -1,5 +1,6 @@
 @import '_variables.scss';
 
+
 .header-wrapper {
   width: 100%;
   position: relative;
@@ -39,7 +40,7 @@
     }
 
     .header-logo {
-      $border: $m-05 3px solid;
+      --border-logo :#{$m-05} 3px solid;
       $size: 13px;
       cursor: pointer;
       height: $size;
@@ -47,7 +48,7 @@
       position: relative;
       box-sizing: content-box;
 
-      border: $border;
+      border: var(--border-logo);
       border-radius: 50%;
       margin: $size + 1;
 
@@ -61,7 +62,7 @@
 
       &::before {
         @include pseudo(200%, 200%);
-        border: $border;
+        border: var(--border-logo);
         border-width: inherit;
         border-radius: 50%;
         @include centerize();
@@ -69,7 +70,7 @@
 
       &::after {
         @include pseudo(300%, 300%);
-        border: $border;
+        border: var(--border-logo);
         border-width: inherit;
         border-radius: 50%;
         @include centerize();

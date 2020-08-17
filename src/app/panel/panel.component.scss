@@ -1,0 +1,44 @@
+@import '_panel.scss';
+
+
+:host {
+  width: 100%;
+  min-height: 100vh;
+  background: $m-01;
+  display: block;
+  position: relative;
+  --widthMenu: 70px;
+
+  @include lg {
+    --widthMenu: 65px;
+  }
+
+  @include md {
+    --widthMenu: 60px;
+  }
+
+  @include sm {
+    --widthMenu: 55px;
+  }
+}
+
+
+
+.panel-header {
+  width: var(--widthMenu);
+  height: 100%;
+  overflow-x: visible;
+  min-height: 500px;
+  background: $m-02;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  box-shadow: 4px 0 10px -3px $m-05;
+}
+
+
+.panel-main {
+  margin-left: var(--widthMenu);
+  padding: 10px;
+}

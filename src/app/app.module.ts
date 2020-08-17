@@ -13,6 +13,8 @@ import { HamMenuComponent } from './header/ham-menu/ham-menu.component';
 import { AboutComponent } from './section/about/about.component';
 import { StoriesComponent } from './section/stories/stories.component';
 import { StoryCardComponent } from './section/stories/story-card/story-card.component';
+import { FadeTitleComponent } from './feature/fade-title/fade-title.component';
+import { MainPortiComponent } from './main-porti/main-porti.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { StoryCardComponent } from './section/stories/story-card/story-card.comp
     HamMenuComponent,
     AboutComponent,
     StoriesComponent,
-    StoryCardComponent
+    StoryCardComponent,
+    FadeTitleComponent,
+    MainPortiComponent
   ],
   imports: [
     BrowserModule,

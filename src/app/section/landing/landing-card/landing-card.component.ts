@@ -1,5 +1,5 @@
 import { LandingCardInterface } from './../../../share/landing/landing-card.interface';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-landing-card',
@@ -8,7 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LandingCardComponent implements OnInit {
   @Input() cardDetail: LandingCardInterface;
+  @Output() imageIsLoaded = new EventEmitter<void>();
   constructor() {}
 
   ngOnInit(): void {}
+
+  imageLoaded(): void {
+    this.imageIsLoaded.emit();
+  }
 }

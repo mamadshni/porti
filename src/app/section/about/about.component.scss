@@ -6,11 +6,34 @@
 
 .test {
   height: 300vh;
-  @include spaceMaker(false);
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @include md {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 85px;
+    padding-bottom: 90px;
+  }
+
+  @include sm {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 70px;
+    padding-bottom: 75px;
+  }
 
   .test2 {
     width: 100%;
     height: 100%;
+    background: green;
+  }
+
+  .test3 {
+    width: 100%;
+    height: 500px;
     background: green;
   }
 }

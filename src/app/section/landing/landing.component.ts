@@ -14,6 +14,7 @@ export class LandingComponent implements OnInit {
   correntCardIndex = 0;
   MaxLenght: number;
   isEventDoing = false;
+  isEveryCardchecked = false;
   lastTouch = 0;
 
   constructor(private landingService: LandingService) {}
@@ -61,12 +62,28 @@ export class LandingComponent implements OnInit {
     this.landingCards = this.landingService.getLandingCards();
     this.MaxLenght = this.landingService.getCardsLength();
   }
-
   startCardAnimation(): void {
     this.isEventDoing = true;
   }
 
   endCardAnimation(): void {
     this.isEventDoing = false;
+  }
+
+  loadNextImage(): void {
+    if (this.isEveryCardchecked) {
+      return;
+    } else {
+      if (this.landingCards.length === this.correntCardIndex + 1) {
+        this.isEveryCardchecked = true;
+      } else {
+        const preLoadImage = new Image();
+        preLoadImage.src = this.landingCards[
+          this.correntCardIndex + 1
+        ].imageUrl;
+
+        console.log('preload next one');
+      }
+    }
   }
 }

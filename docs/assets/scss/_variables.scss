@@ -116,51 +116,77 @@ $f-b: #101010;
 
 @mixin spaceMaker($hasSide : true) {
   @if $hasSide {
-    padding: 150px 50px;
-
-    @include xl {
-      padding: 130px 40px;
-    }
-
-    @include lg {
-      padding: 110px 30px;
-    }
-
-    @include md {
-      padding: 85px 30px 90px;
-    }
-
-    @include sm {
-      padding: 70px 20px 75px;
-    }
+    @include spaceSide;
+    @include spaceAbove;
   }
 
   @else {
-    padding: 150px 0px;
-
-    @include xl {
-      padding: 130px 0px;
-    }
-
-    @include lg {
-      padding: 0px 0px;
-    }
+    @include spaceAbove;
 
     @include md {
-      padding: 85px 30px 90px;
+      padding-left: 30px;
+      padding-right: 30px;
     }
 
     @include sm {
-      padding: 70px 20px 75px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
-
 }
 
+@mixin spaceSide() {
+  padding-left: 50px;
+  padding-right: 50px;
+
+  @include xl {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include lg {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include md {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include sm {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@mixin spaceAbove() {
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  @include xl {
+    padding-top: 130px;
+    padding-bottom: 130px;
+  }
+
+  @include lg {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+
+  @include md {
+    padding-top: 85px;
+    padding-bottom: 90px;
+  }
+
+  @include sm {
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
+}
 
 //========================= functions =======================
 @function randomColor() {
-
   @return rgb(random(255), random(255), random(255));
 }
 
@@ -271,4 +297,8 @@ $f-b: #101010;
   font-style: normal;
   font-weight: 300;
   src: url("#{$addr}.ttf") format("truetype");
+}
+
+div.cdk-virtual-scroll-content-wrapper {
+  @include spaceMaker(false);
 }
