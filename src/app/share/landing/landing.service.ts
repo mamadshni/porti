@@ -1,45 +1,27 @@
+import { FirebaseService } from './../firestore/firebase.service';
 import { LandingCardInterface } from './landing-card.interface';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LandingService {
-  private landingCards: LandingCardInterface[] = [
-    {
-      imageUrl: '../../../../assets/images/landing/1.jpg',
-      title: 'test1',
-      summery:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis architecto rerum praesentium soluta, dolores dolore.',
-      type: 'Lorem ipsum'
-    },
-    {
-      imageUrl: '../../../../assets/images/landing/2.jpg',
-      title: 'test2',
-      summery:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis architecto rerum praesentium soluta, dolores dolore.',
-      type: 'Lorem ipsum'
-    },
-    {
-      imageUrl: '../../../../assets/images/landing/3.jpg',
-      title: 'test3',
-      summery:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis architecto rerum praesentium soluta, dolores dolore.',
-      type: 'Lorem ipsum'
-    }
-  ];
+  constructor(private firebaseService: FirebaseService) {}
 
-  getLandingCards(): LandingCardInterface[] {
-    return this.landingCards.slice();
+  private $landingCards: Observable<LandingCardInterface[]>;
+
+  getLandingCards(): Observable<LandingCardInterface[]> {
+    this.$landingCards = this.firebaseService.getLandingItems();
+    return this.$landingCards;
   }
 
-  getLandingCard(index: number): LandingCardInterface {
-    return this.getLandingCards()[index];
+  getCardsLength(): Observable<number> {
+    return this.$landingCards.pipe(
+      map((items: LandingCardInterface[]) => {
+        return items.length;
+      })
+    );
   }
-
-  getCardsLength(): number {
-    return this.landingCards.length;
-  }
-
-  constructor() {}
 }

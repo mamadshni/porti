@@ -1,6 +1,6 @@
 export interface LandingCardInterface {
-  imageUrl: string;
-  type?: string;
+  id?: string;
   title: string;
+  imageUrl: string;
   summery?: string;
 }

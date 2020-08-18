@@ -1,0 +1,50 @@
+<div class="item-editor-holder">
+
+  <form class="item-editor-form" (ngSubmit)='addItem(form)' #form="ngForm">
+
+    <div class="item-form-place">
+
+      <input type="text" name="name" class="item-input item-name" ngModel required>
+
+      <label for="name" class="item-label">Name :</label>
+
+      <span class=" item-with-line"></span>
+
+    </div>
+
+    <div class="item-form-place item-image-place">
+      <input type="file" id="fileDropRef" name="fileDropRef" multiple (change)="handleImage($event.target.files)"
+        ngModel required />
+
+      <h3 class="dragTitle">Drag and drop file here</h3>
+
+      <button mat-raised-button class="item-submit dragTitle" type="submit">
+        <label for="fileDropRef">Browse for file</label>
+      </button>
+
+      <span class="item-with-line"></span>
+    </div>
+
+    <div class="item-form-place image-preview" *ngIf="imageUrl">
+      <img [src]="imageUrl" alt="">
+    </div>
+
+    <div class="item-form-place">
+
+      <textarea name="summery" rows="10" class="item-input item-summery" ngModel required></textarea>
+      <label for="landing-name" class="item-label">Summery :</label>
+      <span class=" item-with-line"></span>
+
+    </div>
+
+    <div class="item-form-place">
+
+      <button mat-raised-button class="item-submit" type="submit">
+        Add Item
+      </button>
+
+    </div>
+
+  </form>
+
+</div>

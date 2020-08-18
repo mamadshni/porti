@@ -8,12 +8,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class LandingCardComponent implements OnInit {
   @Input() cardDetail: LandingCardInterface;
-  @Output() imageIsLoaded = new EventEmitter<void>();
+  // @Output() imageIsLoaded = new EventEmitter<void>();
   constructor() {}
 
   ngOnInit(): void {}
 
-  imageLoaded(): void {
-    this.imageIsLoaded.emit();
-  }
+  // imageLoaded(): void {
+  //   this.imageIsLoaded.emit();
+  // }
 }

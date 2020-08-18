@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { landingCardAnimation } from '../../animations/landing-card.animation';
 import { LandingCardInterface } from './../../share/landing/landing-card.interface';
 import { LandingService } from './../../share/landing/landing.service';
@@ -10,7 +11,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
   animations: [ landingCardAnimation ]
 })
 export class LandingComponent implements OnInit {
-  landingCards: LandingCardInterface[];
+  $landingCards: Observable<LandingCardInterface[]>;
   correntCardIndex = 0;
   MaxLenght: number;
   isEventDoing = false;
@@ -59,8 +60,11 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.landingCards = this.landingService.getLandingCards();
-    this.MaxLenght = this.landingService.getCardsLength();
+    this.$landingCards = this.landingService.getLandingCards();
+
+    this.landingService
+      .getCardsLength()
+      .subscribe((length) => (this.MaxLenght = length));
   }
   startCardAnimation(): void {
     this.isEventDoing = true;
@@ -70,20 +74,20 @@ export class LandingComponent implements OnInit {
     this.isEventDoing = false;
   }
 
-  loadNextImage(): void {
-    if (this.isEveryCardchecked) {
-      return;
-    } else {
-      if (this.landingCards.length === this.correntCardIndex + 1) {
-        this.isEveryCardchecked = true;
-      } else {
-        const preLoadImage = new Image();
-        preLoadImage.src = this.landingCards[
-          this.correntCardIndex + 1
-        ].imageUrl;
+  // loadNextImage(): void {
+  //   if (this.isEveryCardchecked) {
+  //     return;
+  //   } else {
+  //     if (this.MaxLenght === this.correntCardIndex + 1) {
+  //       this.isEveryCardchecked = true;
+  //     } else {
+  //       const preLoadImage = new Image();
+  //       preLoadImage.src = this.landingCards[
+  //         this.correntCardIndex + 1
+  //       ].imageUrl;
 
-        console.log('preload next one');
-      }
-    }
-  }
+  //       console.log('preload next one');
+  //     }
+  //   }
+  // }
 }

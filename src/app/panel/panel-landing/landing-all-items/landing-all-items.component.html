@@ -1,0 +1,38 @@
+<div class="all-items-holder">
+
+  <div class="landing-item-wrapper" *ngFor="let card of $landingItems | async">
+
+    <div class="landing-item-cell">
+
+      <h2 class="landing-title">
+        {{card.title}}
+      </h2>
+
+    </div>
+
+    <div class="landing-item-cell">
+      <div class="landing-image">
+        <img [src]="card.imageUrl" alt="">
+      </div>
+
+      <div class="landing-detail">
+
+        <p class="landing-summery">
+          {{card.summery}}
+        </p>
+
+        <div class="space-maker"></div>
+
+        <div class="landing-btn-holder">
+          <button mat-raised-button class="landing-btn btn-delete">Edit</button>
+          <button mat-raised-button (click)="deletItem(card)" class="landing-btn btn-delete">Delete</button>
+        </div>
+
+      </div>
+    </div>
+
+    <span class="landing-line"></span>
+
+  </div>
+
+</div>

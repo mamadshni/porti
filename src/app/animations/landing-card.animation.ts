@@ -25,12 +25,14 @@ export const landingCardAnimation = trigger('cardAnimation', [
             }),
             animate(`${duration}ms ${delay}ms ${cubic}`, style('*'))
           ]),
-          query('[cardType]', [
-            style({
-              transform: 'translateY(200px)'
-            }),
-            animate(`${duration / 1.5}ms ${delay * 1.5}ms ${cubic}`, style('*'))
-          ]),
+
+          // query('[cardType]', [
+          //   style({
+          //     transform: 'translateY(200px)'
+          //   }),
+          //   animate(`${duration / 1.5}ms ${delay * 1.5}ms ${cubic}`, style('*'))
+          // ]),
+
           query('[cardTitle]', [
             style({
               marginTop: '200px'
@@ -70,12 +72,14 @@ export const landingCardAnimation = trigger('cardAnimation', [
             }),
             animate(`${duration}ms ${delay}ms ${cubic}`, style('*'))
           ]),
-          query('[cardType]', [
-            style({
-              transform: 'translateY(200px)'
-            }),
-            animate(`${duration / 1.5}ms ${delay * 1.5}ms ${cubic}`, style('*'))
-          ]),
+
+          // query('[cardType]', [
+          //   style({
+          //     transform: 'translateY(200px)'
+          //   }),
+          //   animate(`${duration / 1.5}ms ${delay * 1.5}ms ${cubic}`, style('*'))
+          // ]),
+
           query('[cardTitle]', [
             style({
               marginTop: '200px'

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap");
 
-$font-01: "Roboto", sans-serif;
+$font-01: "Roboto",
+sans-serif;
 
 $m-01: #1b262c;
 $m-02: #0f4c75;
@@ -58,13 +59,17 @@ $f-b: #101010;
 
   @if $line-height==normal {
     line-height: normal;
-  } @else {
+  }
+
+  @else {
     line-height: $line-height / $font-size;
   }
 
   @if $letter-spacing==normal {
     letter-spacing: normal;
-  } @else {
+  }
+
+  @else {
     letter-spacing: #{$letter-spacing / $font-size}em;
   }
 }
@@ -113,7 +118,9 @@ $f-b: #101010;
   @if $hasSide {
     @include spaceSide;
     @include spaceAbove;
-  } @else {
+  }
+
+  @else {
     @include spaceAbove;
 
     @include md {
@@ -195,9 +202,10 @@ $f-b: #101010;
 
   src: url('#{$addr}.eot');
   src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
-    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
-    url("#{$addr}.ttf") format("truetype"),
-    url("#{$addr}.svg#lineawesome") format("svg");
+  url("#{$addr}.woff2") format("woff2"),
+  url("#{$addr}.woff") format("woff"),
+  url("#{$addr}.ttf") format("truetype"),
+  url("#{$addr}.svg#lineawesome") format("svg");
 }
 
 @mixin icon-b($content:'') {
@@ -226,9 +234,10 @@ $f-b: #101010;
 
   src: url('#{$addr}.eot');
   src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
-    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
-    url("#{$addr}.ttf") format("truetype"),
-    url("#{$addr}.svg#lineawesome") format("svg");
+  url("#{$addr}.woff2") format("woff2"),
+  url("#{$addr}.woff") format("woff"),
+  url("#{$addr}.ttf") format("truetype"),
+  url("#{$addr}.svg#lineawesome") format("svg");
 }
 
 @mixin icon-f4($content:'') {
@@ -257,9 +266,10 @@ $f-b: #101010;
 
   src: url('#{$addr}.eot');
   src: url("#{$addr}.eot?#iefix") format("embedded-opentype"),
-    url("#{$addr}.woff2") format("woff2"), url("#{$addr}.woff") format("woff"),
-    url("#{$addr}.ttf") format("truetype"),
-    url("#{$addr}.svg#lineawesome") format("svg");
+  url("#{$addr}.woff2") format("woff2"),
+  url("#{$addr}.woff") format("woff"),
+  url("#{$addr}.ttf") format("truetype"),
+  url("#{$addr}.svg#lineawesome") format("svg");
 }
 
 @mixin icon-f9($content:'') {

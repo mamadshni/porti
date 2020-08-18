@@ -14,6 +14,7 @@
   align-items: center;
   height: var(--widthMenu);
   position: relative;
+  cursor: pointer;
 
   &:hover {
 
@@ -86,6 +87,12 @@
     }
   }
 
+  &.active {
+    .header-item-icon {
+      color: $f-01;
+    }
+  }
+
 
 
   .header-item-icon {
@@ -114,7 +121,7 @@
     font-weight: 400;
     font-family: $font-01;
 
-    @include font-size(18);
+    @include font-size(15);
 
     transform: scale(0) translateX(0);
     transition: transform .3s ease-out;
@@ -126,15 +133,15 @@
     border-radius: 2px;
 
     @include lg {
-      @include font-size(17);
+      @include font-size(14);
     }
 
     @include md {
-      @include font-size(16);
+      @include font-size(13);
     }
 
     @include sm {
-      @include font-size(15);
+      @include font-size(12);
     }
   }
 }
