@@ -9,16 +9,19 @@ $m-03: #3a4c5a;
 $m-04: #9a9ce7;
 $m-05: #0f0f11;
 
+
 $m-w: #efefef;
 $m-b: #101010;
 
 $f-01: #9a9ce7;
 $f-02: #201d1d;
 $f-03: #3a4c5a;
-
+$f-04:#B8BAEE;
 
 $f-w: #efefef;
 $f-b: #101010;
+
+$g-01: linear-gradient(90deg, $m-01 0%, $m-04 100%);
 
 @mixin xl {
   @media screen and (max-width: 1440px) {

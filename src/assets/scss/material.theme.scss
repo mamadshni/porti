@@ -1,0 +1,124 @@
+@import '../node_modules/@angular/material/theming';
+
+@include mat-core();
+
+$panel-primary: (50 : #F3F3FC,
+  100 :#E1E1F8,
+  200 :#CDCEF3,
+  300 :#B8BAEE,
+  400 :#A9ABEB,
+  500 :#9A9CE7,
+  600 :#9294E4,
+  700 :#888AE0,
+  800 :#7E80DD,
+  900 :#6C6ED7,
+  A100 :#FFFFFF,
+  A200 :#FFFFFF,
+  A400 :#E7E8FF,
+  A700 :#CECFFF,
+  contrast: (50 : $dark-primary-text,
+    100 : $dark-primary-text,
+    200 : $dark-primary-text,
+    300 : $dark-primary-text,
+    400 : $dark-primary-text,
+    500 : $light-primary-text,
+    600 : $light-primary-text,
+    700 : $light-primary-text,
+    800 : $light-primary-text,
+    900 : $light-primary-text,
+    A100 : $dark-primary-text,
+    A200 : $dark-primary-text,
+    A400 : $dark-primary-text,
+    A700 : $dark-primary-text,
+  ));
+
+$panel-accent: (50: #E7EAEB,
+  100: #C4C9CE,
+  200: #9DA6AD,
+  300: #75828C,
+  400: #586773,
+  500: #3A4C5A,
+  600: #344552,
+  700: #2C3C48,
+  800: #25333F,
+  900: #18242E,
+  A100: #72B8FF,
+  A200: #3F9FFF,
+  A400: #0C85FF,
+  A700: #0079F1,
+  contrast: (50 : $dark-primary-text,
+    100 : $dark-primary-text,
+    200 : $dark-primary-text,
+    300 : $dark-primary-text,
+    400 : $dark-primary-text,
+    500 : $light-primary-text,
+    600 : $light-primary-text,
+    700 : $light-primary-text,
+    800 : $light-primary-text,
+    900 : $light-primary-text,
+    A100 : $dark-primary-text,
+    A200 : $dark-primary-text,
+    A400 : $dark-primary-text,
+    A700 : $dark-primary-text,
+  ));
+
+
+$panel-mat-dark-theme-foreground: (base: map-get($panel-primary, 500),
+  divider: map-get($panel-accent, 500),
+  dividers: map-get($panel-accent, 500),
+  disabled: $light-disabled-text,
+
+  disabled-button: rgba(map-get($panel-primary, 500), 0.3),
+  disabled-text: $light-disabled-text,
+  elevation: black,
+  hint-text: $light-disabled-text,
+  secondary-text: map-get($panel-primary, 300),
+
+  icon: map-get($panel-primary, 500),
+  icons: map-get($panel-primary, 500),
+  text: map-get($panel-primary, 500),
+
+  slider-min: map-get($panel-primary, 500),
+  slider-off: rgba(map-get($panel-primary, 500), 0.3),
+  slider-off-active: rgba(map-get($panel-primary, 500), 0.3),
+);
+
+
+.panel-mat-theme {
+  $panel-theme-primary: mat-palette($panel-primary);
+  $panel-theme-accent: mat-palette($panel-accent);
+  $panel-theme-warn: mat-palette($mat-red);
+
+  $panel-theme: mat-dark-theme($panel-theme-primary, $panel-theme-accent, $panel-theme-warn);
+  $panel-app-theme-custom: map-merge($panel-theme, (foreground: $panel-mat-dark-theme-foreground));
+
+  @include angular-material-theme($panel-app-theme-custom);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $my-foreground: my-mat-dark-theme-foreground(mat-color($my-primary, 500));

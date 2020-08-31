@@ -302,3 +302,57 @@ $f-b: #101010;
 div.cdk-virtual-scroll-content-wrapper {
   @include spaceMaker(false);
 }
+
+
+
+.form-quill {
+  $normal-icon-color: #3a4c5a;
+  $active-icon-color: #9a9ce7;
+
+  .ql-container.ql-snow {
+    border: unset;
+  }
+
+  .ql-snow.ql-toolbar {
+
+    color: $normal-icon-color;
+    border: unset;
+    border-bottom: 1px solid $normal-icon-color;
+
+    .ql-picker {
+      color: $normal-icon-color;
+    }
+
+    .ql-stroke {
+      stroke: $normal-icon-color;
+    }
+
+    .ql-fill {
+      fill: $normal-icon-color;
+    }
+
+    button:hover,
+    button:focus,
+    button.ql-active,
+    .ql-picker-label:hover,
+    .ql-picker-label.ql-active,
+    .ql-picker-item:hover,
+    .ql-picker-item.ql-selected {
+
+      color: $active-icon-color;
+
+      .ql-stroke,
+      .ql-stroke-miter {
+        stroke: $active-icon-color
+      }
+
+      .ql-fill {
+        fill: $active-icon-color
+      }
+    }
+  }
+
+  .ql-editor.ql-blank::before {
+    color: rgba($normal-icon-color, 0.9);
+  }
+}

@@ -24,9 +24,9 @@ const routes: Routes = [
       },
       { path: 'about', component: AboutComponent, data: { animation: '3' } }
     ]
-  },
+  }
 
-  { path: '**', redirectTo: 'home' }
+  // { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

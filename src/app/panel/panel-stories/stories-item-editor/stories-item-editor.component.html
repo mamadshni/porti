@@ -1,0 +1,81 @@
+<div class="editor-holder panel-mat-theme">
+
+  <form class="editor-form" [formGroup]="ItemForm" (ngSubmit)="submitForm()">
+
+    <mat-form-field appearance="standard">
+      <mat-label>Title :</mat-label>
+      <input matInput placeholder="Story Title" formControlName="title" class="form-input">
+    </mat-form-field>
+
+
+    <div class="form-image">
+      <input type="file" multiple (change)="handleImage($event.target.files)" formControlName="imageAdr" />
+
+      <h3 class="dragTitle">Drag and drop file here</h3>
+
+      <button mat-raised-button class="item-submit dragTitle" type="submit">
+        Browse for file
+      </button>
+
+      <span class="form-line"></span>
+    </div>
+
+    <div class="image-preview" *ngIf="imageUrl">
+      <img [src]="imageUrl" alt="">
+    </div>
+
+
+    <mat-form-field appearance="standard">
+
+      <mat-label>Category :</mat-label>
+
+      <mat-chip-list #CategoryList aria-label="Category selection" formControlName="categories">
+
+        <mat-chip *ngFor="let category of categories" removable (removed)="removeChip(category)">
+
+          {{category}}
+
+          <mat-icon matChipRemove>cancel</mat-icon>
+
+        </mat-chip>
+
+        <input placeholder="New category..." [matChipInputFor]="CategoryList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="true"
+          (matChipInputTokenEnd)="addChip($event)" class="form-input">
+
+      </mat-chip-list>
+
+    </mat-form-field>
+
+
+    <mat-form-field appearance="standard">
+      <mat-label>Summery :</mat-label>
+      <textarea rows="3" matInput placeholder="Story Summery" formControlName="summery" class="form-input"></textarea>
+    </mat-form-field>
+
+    <div class="form-quill">
+
+      <quill-editor [modules]="quillModules" [placeholder]="'Enter Your Story'" class="item-quill"
+        formControlName="story">
+      </quill-editor>
+      <label for="summery" class="form-label">Story :</label>
+
+      <span class="form-line"></span>
+
+    </div>
+
+    <div class="form-btn-holder">
+
+      <button mat-raised-button class="form-submit" type="submit" *ngIf="!isEditMode" [disabled]="ItemForm.invalid">
+        Add Item
+      </button>
+
+      <button mat-raised-button class="form-submit" type="submit" *ngIf="isEditMode" [disabled]="ItemForm.invalid">
+        Edit Item
+      </button>
+
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,38 @@
+<div class="all-items-holder">
+
+  <div class="stories-item-wrapper" *ngFor="let story of $storyItems | async">
+
+    <div class="stories-item-cell">
+
+      <h2 class="stories-title">
+        {{story.title}}
+      </h2>
+
+    </div>
+
+    <div class="stories-item-cell">
+      <div class="stories-image">
+        <img [src]="story.imageUrl" alt="">
+      </div>
+
+      <div class="stories-detail">
+
+        <p class="stories-summery">
+          {{story.summery}}
+        </p>
+
+        <div class="space-maker"></div>
+
+        <div class="stories-btn-holder">
+          <a mat-raised-button [routerLink]="['../','editStory',story.id]" class="stories-btn btn-delete">Edit</a>
+          <button mat-raised-button (click)="deletItem(story)" class="stories-btn btn-delete">Delete</button>
+        </div>
+
+      </div>
+    </div>
+
+    <span class="stories-line"></span>
+
+  </div>
+
+</div>

@@ -1,0 +1,142 @@
+@import '_panel.scss';
+
+:host {
+  width: 100%;
+  min-height: calc(100vh - var(--widthMenu));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.editor-holder {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background: $m-02;
+  box-shadow: 3px 3px 10px -3px $m-05;
+}
+
+.editor-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-image {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  input {
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  h3 {
+    margin: 0;
+    @include font-size(18);
+    font-weight: 600;
+    color: rgba($f-04, 0.7);
+
+    @include lg {
+      @include font-size(17);
+    }
+
+    @include md {
+      @include font-size(16);
+    }
+
+    @include sm {
+      @include font-size(15);
+    }
+  }
+}
+
+.form-quill {
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
+  position: relative;
+
+  .form-label {
+    color: rgba($f-04, 0.7);
+    font-family: 'Sofia Pro';
+    @include font-size(16);
+    transition: all 0.3s ease;
+    font-weight: normal;
+
+  }
+
+  .item-quill {
+    padding: 10px 20px;
+    order: 2;
+  }
+}
+
+.image-preview {
+  width: 100%;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.ng-touched.ng-invalid~ {
+
+  .form-label {
+    color: #f44336;
+  }
+
+  .dragTitle {
+    color: #f44336;
+  }
+
+
+  .form-line {
+    &::after {
+      background: #f44336;
+      width: 100%;
+    }
+  }
+}
+
+.form-line {
+
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: $m-03;
+
+  &::after {
+    transition: 0.3s ease;
+    background: $m-04;
+    @include pseudo(0%);
+  }
+
+}
+
+.form-btn-holder {
+  margin-top: 20px;
+}
+
+.form-input {
+  color: $f-01;
+}

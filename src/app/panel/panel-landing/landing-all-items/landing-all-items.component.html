@@ -24,7 +24,7 @@
         <div class="space-maker"></div>
 
         <div class="landing-btn-holder">
-          <button mat-raised-button class="landing-btn btn-delete">Edit</button>
+          <a mat-raised-button [routerLink]="['../','editLanding',card.id]" class="landing-btn btn-delete">Edit</a>
           <button mat-raised-button (click)="deletItem(card)" class="landing-btn btn-delete">Delete</button>
         </div>
 

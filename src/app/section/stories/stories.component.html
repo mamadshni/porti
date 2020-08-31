@@ -1,8 +1,8 @@
 <div class="stories-holder">
 
-  <cdk-virtual-scroll-viewport class="virtual-stories" [itemSize]="cardHeight" (scrolledIndexChange)="handler($event)">
+  <cdk-virtual-scroll-viewport class="virtual-stories" [itemSize]="cardHeight">
 
-    <div class="story-card-holder" *cdkVirtualFor="let story of storiesList">
+    <div class="story-card-holder" *cdkVirtualFor="let story of $storiesList | async">
 
       <app-story-card [storyCardData]="story"></app-story-card>
 

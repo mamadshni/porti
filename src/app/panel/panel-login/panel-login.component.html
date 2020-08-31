@@ -1,0 +1,33 @@
+<div class="login-holder">
+  <form class="login-form-holder" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-place">
+
+      <input type="email" class="form-input" formControlName="email" InputFocus>
+
+      <label for="Email" class="form-label">Email :</label>
+
+      <span class="form-line"></span>
+
+    </div>
+
+    <div class="form-place">
+
+      <input type="password" class="form-input" formControlName="password" InputFocus>
+
+      <label for="password" class="form-label">password :</label>
+
+      <span class="form-line"></span>
+
+    </div>
+
+    <div class="form-place">
+
+      <button mat-raised-button class="form-submit" type="submit" [disabled]="loginForm.invalid">
+        LogIn
+      </button>
+
+    </div>
+
+  </form>
+</div>

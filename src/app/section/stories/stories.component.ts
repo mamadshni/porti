@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { StoryService } from './../../share/stories/story.service';
 import { StoryCardInterface } from './../../share/stories/story-card.interface';
 import {
@@ -14,8 +15,8 @@ import {
 })
 export class StoriesComponent implements OnInit {
   currentWindowState = 'big';
-  cardHeight = 1130;
-  storiesList: StoryCardInterface[] = [];
+  cardHeight = 1100;
+  $storiesList: Observable<StoryCardInterface[]>;
 
   @HostListener('window:resize', [ '$event' ])
   onResize(): void {
@@ -46,7 +47,7 @@ export class StoriesComponent implements OnInit {
   constructor(private storyService: StoryService) {}
 
   ngOnInit(): void {
-    this.storiesList = this.storyService.getStories();
+    this.$storiesList = this.storyService.getStories();
     this.onResize();
   }
 

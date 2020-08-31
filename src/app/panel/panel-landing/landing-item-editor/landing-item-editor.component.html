@@ -1,46 +1,44 @@
-<div class="item-editor-holder">
+<div class="editor-holder panel-mat-theme">
 
-  <form class="item-editor-form" (ngSubmit)='addItem(form)' #form="ngForm">
+  <form class="editor-form" [formGroup]="ItemForm" (ngSubmit)="submitForm()">
 
-    <div class="item-form-place">
+    <mat-form-field appearance="standard">
+      <mat-label>Title :</mat-label>
+      <input matInput placeholder="Story Title" formControlName="title" class="form-input">
+    </mat-form-field>
 
-      <input type="text" name="name" class="item-input item-name" ngModel required>
 
-      <label for="name" class="item-label">Name :</label>
-
-      <span class=" item-with-line"></span>
-
-    </div>
-
-    <div class="item-form-place item-image-place">
-      <input type="file" id="fileDropRef" name="fileDropRef" multiple (change)="handleImage($event.target.files)"
-        ngModel required />
+    <div class="form-image">
+      <input type="file" multiple (change)="handleImage($event.target.files)" formControlName="imageAdr" />
 
       <h3 class="dragTitle">Drag and drop file here</h3>
 
       <button mat-raised-button class="item-submit dragTitle" type="submit">
-        <label for="fileDropRef">Browse for file</label>
+        Browse for file
       </button>
 
-      <span class="item-with-line"></span>
+      <span class="form-line"></span>
     </div>
 
-    <div class="item-form-place image-preview" *ngIf="imageUrl">
+    <div class="image-preview" *ngIf="imageUrl">
       <img [src]="imageUrl" alt="">
     </div>
 
-    <div class="item-form-place">
 
-      <textarea name="summery" rows="10" class="item-input item-summery" ngModel required></textarea>
-      <label for="landing-name" class="item-label">Summery :</label>
-      <span class=" item-with-line"></span>
+    <mat-form-field appearance="standard">
+      <mat-label>Summery :</mat-label>
+      <textarea rows="5" matInput placeholder="Story Summery" formControlName="summery" class="form-input"></textarea>
+    </mat-form-field>
 
-    </div>
 
-    <div class="item-form-place">
+    <div class="form-btn-holder">
 
-      <button mat-raised-button class="item-submit" type="submit">
+      <button mat-raised-button class="form-submit" type="submit" *ngIf="!isEditMode" [disabled]="ItemForm.invalid">
         Add Item
+      </button>
+
+      <button mat-raised-button class="form-submit" type="submit" *ngIf="isEditMode" [disabled]="ItemForm.invalid">
+        Edit Item
       </button>
 
     </div>

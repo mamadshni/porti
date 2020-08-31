@@ -20,7 +20,7 @@
   <span class="header-item-title"> Landing Page </span>
 </a>
 
-<a class=" header-item">
+<a class=" header-item" [routerLink]="[ 'stories' ]" routerLinkActive="active">
 
   <div class="header-item-icon">
     &#xf083;
@@ -29,11 +29,21 @@
   <span class="header-item-title"> Stories </span>
 </a>
 
-<a class="header-item" [routerLink]="[ 'test' ]" routerLinkActive="active">
+<a class="header-item" [routerLink]="[ 'login' ]" routerLinkActive="active" *ngIf="!isLogedIn">
 
   <div class="header-item-icon">
     &#xf406;
   </div>
 
-  <span class="header-item-title"> User </span>
+  <span class="header-item-title"> LogIn </span>
+</a>
+
+
+<a class="header-item" (click)="Logout()" *ngIf="isLogedIn">
+
+  <div class="header-item-icon">
+    &#xf2f5;
+  </div>
+
+  <span class="header-item-title"> LogOut </span>
 </a>
